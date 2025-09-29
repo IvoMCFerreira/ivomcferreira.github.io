@@ -1,5 +1,5 @@
 <script>
-  import { MapPin, Phone, Mail, Github, Linkedin } from "lucide-svelte";
+  import { MapPin, Phone, Mail, Github, Linkedin, Code } from "lucide-svelte";
 
   const profile = {
     name: "Ivo Ferreira",
@@ -25,6 +25,38 @@
       description: "Projeto de AR e YOLO para deteção em tempo real."
     }
   ];
+
+  const techStack = [
+    {
+      title: "🧠 Computer Vision & AI",
+      skills: "OpenCV, YOLO, TensorFlow, PyTorch"
+    },
+    {
+      title: "💻 Programming",
+      skills: "Python (primary), C, Bash, SQL"
+    },
+    {
+      title: "🌐 Web",
+      skills: "JavaScript (Vue, React, Svelte), HTML, CSS, PHP (Laravel)"
+    },
+    {
+      title: "📊 Data & ML",
+      skills: "Pandas, NumPy, Scikit-learn, Feature Engineering"
+    },
+    {
+      title: "🛠️ Systems & Tools",
+      skills: "Git, Linux/WSL2, Jupyter, Performance Optimization"
+    },
+    {
+      title: "🌍 Languages",
+      skills: "Portuguese (Native), English (C2)"
+    }
+  ];
+
+  const education = {
+    uni: "Polytechnic Institute of Leiria",
+    degree: "Licenciatura em Engenharia Informática"
+  };
 </script>
 
 <!-- 🧑 Perfil -->
@@ -46,6 +78,17 @@
   </div>
 </section>
 
+<!-- ℹ️ About Me -->
+<section class="about">
+  <h2>About Me</h2>
+  <p>
+    Sou um entusiasta por tecnologia e engenharia informática, com experiência em 
+    desenvolvimento web, jogos e visão por computador. 
+    Tenho interesse em criar soluções criativas e aprender novas tecnologias 
+    enquanto colaboro em projetos desafiantes.
+  </p>
+</section>
+
 <!-- 💻 Projetos -->
 <section class="projects">
   <h2>Projetos</h2>
@@ -59,6 +102,26 @@
         <p>{project.description}</p>
       </a>
     {/each}
+  </div>
+</section>
+
+<!-- 🛠️ Tech Stack & Education -->
+<section class="stack">
+  <h2>Tech Stack & Education</h2>
+
+  <div class="stack-grid">
+    {#each techStack as item}
+      <div class="category">
+        <h3>{item.title}</h3>
+        <p>{item.skills}</p>
+      </div>
+    {/each}
+  </div>
+
+  <div class="education">
+    <h3>🎓 Education</h3>
+    <p>{education.degree}</p>
+    <p>{education.uni}</p>
   </div>
 </section>
 
@@ -88,10 +151,11 @@
 
   .info {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem; 
     font-size: 0.95rem;
+    margin-top: 1rem;
   }
 
   .info p {
@@ -108,6 +172,25 @@
 
   .info a:hover {
     text-decoration: underline;
+  }
+
+  /* ℹ️ About Me */
+  .about {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
   }
 
   /* 💻 Projetos */
@@ -170,5 +253,78 @@
     font-size: 0.95rem;
     color: #555;
     padding: 0 1rem 1.5rem;
+  }
+
+  /* 🛠️ Tech Stack & Educação */
+  .stack {
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .stack h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .stack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  .category {
+    flex: 1 1 250px;
+    background: #fff;
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+  }
+
+  .category h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .category p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #444;
+  }
+
+  .education {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .education h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .education p {
+    margin: 0.3rem 0;
+    color: #444;
+  }
+
+  @media (max-width: 768px) {
+    .stack-grid {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 </style>
