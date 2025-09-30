@@ -163,6 +163,10 @@
   <img src="https://fastly.picsum.photos/id/293/180/180.jpg?hmac=MtKAFcKC8_ogntpFC432N0cfBSklw6wi4wB7I4xNZTo" alt="Profile of Ivo Ferreira" class="avatar" />
   <h1>{profile.name}</h1>
   <h2>{profile.title}</h2>
+  <!-- ℹ️ About Me -->
+<section class="about">
+  <p>Computer Engineer specializing in Python, AI/ML, game development, and computer vision. Experienced in building real-time solutions with OpenCV, YOLO, and machine learning, bridging software, middleware, and interactive applications.</p>
+</section>
   <div class="info">
     <p><MapPin size="18" /> {profile.location}</p>
     <p><Mail size="18" /> {profile.email}</p>
@@ -172,10 +176,7 @@
   </div>
 </section>
 
-<!-- ℹ️ About Me -->
-<section class="about">
-  <p>Computer Engineer specializing in Python, AI/ML, game development, and computer vision. Experienced in building real-time solutions with OpenCV, YOLO, and machine learning, bridging software, middleware, and interactive applications.</p>
-</section>
+
 
 <!-- 🛠️ Tech Stack -->
 <section class="stack">
@@ -266,7 +267,7 @@
 
   /* Profile */
   .hero { padding: 1.5rem 2rem 3rem; text-align: center; }
-  .avatar { border-radius: 50%; margin-bottom: 1rem; }
+  .avatar { border-radius: 50%; margin-bottom: 1rem; margin-top: 1rem; }
   .hero h1 { font-size: 2.5rem; margin: 0.2rem 0; color: #222; }
   .hero h2 { font-size: 1.2rem; color: #555; margin-bottom: 1.5rem; }
   .info { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; font-size: 0.95rem; margin-top: 1rem; }
