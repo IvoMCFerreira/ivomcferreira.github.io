@@ -86,10 +86,12 @@
     { name: "Linux/WSL2", icon: Terminal, color: "#000000" },
     { name: "Jupyter", icon: Terminal, color: "#F37626" },
     { name: "Arduino", icon: Cpu, color: "#00979D" },
-    { name: "Raspberry Pi", icon: Cpu, color: "#C51A4A" },
+    { name: "Raspberry Pi", icon: Cpu, color: "#C51A4A" }
+  ];
 
-    { name: "Portuguese (Native)", icon: Globe, color: "#3E4095" },
-    { name: "English (C2)", icon: Globe, color: "#1C75BC" }
+  const languages = [
+    { name: "Portuguese", level: "Native" },
+    { name: "English", level: "C2" }
   ];
 
   const education = {
@@ -136,7 +138,7 @@
   <h2>Featured Projects</h2>
   <div class="featured-grid">
     {#each featuredProjects as project}
-      <a href={project.link} class="featured-card" target="_blank">
+      <div class="featured-card">
         <div class="image-wrapper">
           <img class="static" src={project.staticImg} alt={project.title} />
           <img class="gif" src={project.gifImg} alt={project.title} />
@@ -144,24 +146,22 @@
         <h3>{project.title}</h3>
         <p>{project.description}</p>
         <div class="tags">{#each project.tags as tag}<span class="tag">{tag}</span>{/each}</div>
-      </a>
+      </div>
     {/each}
   </div>
 
   <!-- Other Projects -->
   <div class="other-grid">
     {#each otherProjects as project}
-      <a href={project.link} class="card" target="_blank">
+      <div class="card">
         <div class="image-wrapper"><img src={project.img} alt={project.title} /></div>
         <h3>{project.title}</h3>
         <p>{project.description}</p>
         <div class="tags">{#each project.tags as tag}<span class="tag">{tag}</span>{/each}</div>
-      </a>
+      </div>
     {/each}
   </div>
 </section>
-
-
 
 <!-- 🎓 Education -->
 <section class="education">
@@ -187,6 +187,13 @@
   .about h2 { font-size: 2rem; margin-bottom: 1.5rem; }
   .about p { font-size: 1rem; line-height: 1.6; color: #444; }
 
+  /* Tech Stack */
+  .stack { padding: 2.5rem 2rem; text-align: center; max-width: 1000px; margin: 0 auto; }
+  .stack h2 { font-size: 2.2rem; margin-bottom: 2rem; font-weight: 600; }
+  .tech-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
+  .tech-card { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 12px; font-size: 0.9rem; font-weight: 500; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  @media (hover: hover) { .tech-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); } }
+
   /* Projects  */ 
   .projects { padding: 2.5rem 2rem; text-align: center; }
   .projects h2 { font-size: 2.5rem; margin-bottom: 2rem; }
@@ -211,13 +218,6 @@
 
   .tags { padding: 0 1rem 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .tag { font-size: 0.8rem; background: #e0e0e0; padding: 0.2rem 0.5rem; border-radius: 6px; }
-
-  /* Tech Stack */
-  .stack { padding: 2.5rem 2rem; text-align: center; max-width: 1000px; margin: 0 auto; }
-  .stack h2 { font-size: 2.2rem; margin-bottom: 2rem; font-weight: 600; }
-  .tech-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
-  .tech-card { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 12px; font-size: 0.9rem; font-weight: 500; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-  @media (hover: hover) { .tech-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); } }
 
   /* Education */
   .education { text-align: center; font-size: 0.95rem; color: #555; margin: 2rem 0; }
