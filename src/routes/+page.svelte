@@ -111,9 +111,9 @@
       description: "Trained a high-accuracy object detection model using Python, Jupyter, and Linux, with advanced feature extraction and fine-tuning on custom datasets.",
       tags: [
         { name: "Python", icon: Code, color: "#3572A5" },
+        { name: "Feature Extraction", icon: Database, color: "#6C3483" },
         { name: "AI", icon: Cpu, color: "#FF6F00" },
-        { name: "Computer Vision", icon: Cpu, color: "#5C3EE8" },
-        { name: "Feature Extraction", icon: Database, color: "#6C3483" }
+        { name: "Computer Vision", icon: Cpu, color: "#5C3EE8" }
       ]
     }
   ];
