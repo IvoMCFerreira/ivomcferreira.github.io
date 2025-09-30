@@ -367,6 +367,8 @@
     .info {
       flex-direction: column;
       gap: 0.8rem;
+      align-items: center; 
+      text-align: center;  
     }
     
     /* Stack section mobile */
