@@ -354,7 +354,7 @@
       color: white; padding: 1rem;
       transition: opacity 0.3s ease; z-index: 1;
     }
-    .description-overlay.playing { opacity: 1; }
+     .description-overlay.playing { opacity: 0; }
 
     .description-overlay h3 { margin: 0 0 0.5rem 0; font-size: 1.1rem; font-weight: 600; }
     .description-overlay p { margin: 0; font-size: 0.85rem; line-height: 1.4; color: white; }
