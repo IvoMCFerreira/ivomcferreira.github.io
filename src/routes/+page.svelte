@@ -23,12 +23,33 @@
     const isPlaying = playingGifs.has(projectTitle);
     
     if (isPlaying) {
+      gifTimestamps.set(projectTitle, Date.now());
       playingGifs.delete(projectTitle);
     } else {
       playingGifs.add(projectTitle);
     }
     
     playingGifs = playingGifs; // trigger reactivity
+  }
+
+  function handleMouseEnter(projectTitle) {
+    if (isMobile) return;
+    playingGifs.add(projectTitle);
+    playingGifs = playingGifs;
+  }
+
+  function handleMouseLeave(projectTitle) {
+    if (isMobile) return;
+    gifTimestamps.set(projectTitle, Date.now());
+    playingGifs.delete(projectTitle);
+    playingGifs = playingGifs;
+  }
+
+  function handleKeydown(event, projectTitle) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleGif(projectTitle, event);
+    }
   }
 
   const profile = {
@@ -57,6 +78,8 @@
       tags: ["Python", "OpenCV", "YOLO", "AI"]
     }
   ];
+
+  let gifTimestamps = new Map();
 
   let otherProjects = [
     {
@@ -168,10 +191,10 @@
   <h2>Featured Projects</h2>
   <div class="featured-grid">
     {#each featuredProjects as project}
-      <div class="featured-card" class:mobile-card={isMobile}>
-        <div class="image-wrapper" on:click={(e) => toggleGif(project.title, e)} class:clickable={isMobile}>
+      <div class="featured-card" class:mobile-card={isMobile} on:mouseenter={() => handleMouseEnter(project.title)} on:mouseleave={() => handleMouseLeave(project.title)} role="button" tabindex="0">
+        <div class="image-wrapper" on:click={(e) => toggleGif(project.title, e)} on:keydown={(e) => handleKeydown(e, project.title)} class:clickable={isMobile} role="button" tabindex="0">
           <img class="static" src={project.staticImg} alt={project.title} class:playing={playingGifs.has(project.title)} />
-          <img class="gif" src={project.gifImg} alt={project.title} class:playing={playingGifs.has(project.title)} />
+          <img class="gif" src="{project.gifImg}?t={playingGifs.has(project.title) ? Date.now() : gifTimestamps.get(project.title) || 0}" alt={project.title} class:playing={playingGifs.has(project.title)} />
           {#if isMobile}
             <div class="play-overlay" class:playing={playingGifs.has(project.title)}>
               <span class="play-text">Tap to play</span>
