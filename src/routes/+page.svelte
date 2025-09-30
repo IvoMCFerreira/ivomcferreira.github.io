@@ -13,81 +13,87 @@
 
   let featuredProjects = [
     {
-      title: "2D Educational Game",
-      img: "https://fastly.picsum.photos/id/45/600/400.jpg?hmac=30ESDoOeuVNmsmMrYIspOUJ2OjOmFoXTvzRiH7wWHfI",
+      title: "2D Educational RPG",
+      img: "/images/game.png",
       link: "#",
-      description: "Jogo educativo desenvolvido em GDScript/Python."
+      description: "Full-stack development of a 2D educational RPG, including gameplay, art, and sound using Python and GDScript.",
+      tags: ["Python", "GDScript", "GameDev"]
     },
     {
-      title: "Computer Vision Middleware",
-      img: "https://fastly.picsum.photos/id/1037/600/400.jpg?hmac=E7oV9MlYzBUFFygTj04kbdysY_Yu8n2jqR9o-hXekyU",
+      title: "Real-Time Computer Vision Middleware",
+      img: "/images/yolo.png",
       link: "#",
-      description: "Sistema de deteção em tempo real usando AR e YOLO."
+      description: "Middleware communicating with a remote server for real-time object detection using Python, OpenCV, YOLO, and optimized processing pipelines.",
+      tags: ["Python", "OpenCV", "YOLO", "AI"]
     }
   ];
 
   let otherProjects = [
     {
-      title: "Rental Price Prediction",
-      img: "https://fastly.picsum.photos/id/45/600/400.jpg?hmac=30ESDoOeuVNmsmMrYIspOUJ2OjOmFoXTvzRiH7wWHfI",
+      title: "Rental Price Predictor",
+      img: "/images/rent.png",
       link: "#",
-      description: "Modelo de regressão para preços de apartamentos com Python, Pandas e Scikit-learn."
+      description: "Regression model predicting apartment prices using Python, Pandas, Scikit-learn, and feature engineering for data cleaning and transformation.",
+      tags: ["Python", "Pandas", "Scikit-learn", "ML"]
     },
     {
-      title: "Simulador de Cartão Virtual",
-      img: "https://fastly.picsum.photos/id/45/600/400.jpg?hmac=30ESDoOeuVNmsmMrYIspOUJ2OjOmFoXTvzRiH7wWHfI",
+      title: "Virtual Payment Card Simulator",
+      img: "/images/card.jpg",
       link: "#",
-      description: "Simulador de cartão tipo MBWay com interface web e lógica de transações."
+      description: "Interactive virtual card for peer-to-peer payments using Vue.js and Laravel, simulating secure mobile money transfers.",
+      tags: ["Vue", "Laravel", "Web"]
     },
     {
-      title: "Dashboard Supermercado Inteligente",
-      img: "https://fastly.picsum.photos/id/45/600/400.jpg?hmac=30ESDoOeuVNmsmMrYIspOUJ2OjOmFoXTvzRiH7wWHfI",
+      title: "Smart Supermarket Dashboard",
+      img: "/images/dashboard.png",
       link: "#",
-      description: "Gestão de sensores, stock e performance do supermercado."
+      description: "IoT dashboard monitoring and controlling sensors and actuators connected to Raspberry Pi and Arduino, using Python, HTML, CSS, and JS.",
+      tags: ["Python", "IoT", "Raspberry Pi", "Arduino"]
     },
     {
-      title: "Treino Modelo IA de Object Detection",
-      img: "https://fastly.picsum.photos/id/45/600/400.jpg?hmac=30ESDoOeuVNmsmMrYIspOUJ2OjOmFoXTvzRiH7wWHfI",
+      title: "AI Custom Object Classifier",
+      img: "/images/neural.png",
       link: "#",
-      description: "Modelo IA para distinguir objetos em fotos com feature extraction e fine-tuning."
+      description: "Trained a high-accuracy object detection model using Python, Jupyter, and Linux, with advanced feature extraction and fine-tuning on custom datasets.",
+      tags: ["Python", "AI", "Computer Vision", "Feature Extraction"]
     }
   ];
 
   const techStack = [
-    { name: "Python", icon: Code, color: "#3572A5", group: "Programming" },
-    { name: "C", icon: Code, color: "#A8B9CC", group: "Programming" },
-    { name: "Bash", icon: Terminal, color: "#4EAA25", group: "Programming" },
-    { name: "SQL", icon: Database, color: "#F29111", group: "Programming" },
-    { name: "GDScript", icon: Code, color: "#478CBF", group: "Programming" },
+    { name: "Python", icon: Code, color: "#3572A5" },
+    { name: "C", icon: Code, color: "#A8B9CC" },
+    { name: "Bash", icon: Terminal, color: "#4EAA25" },
+    { name: "SQL", icon: Database, color: "#F29111" },
+    { name: "GDScript", icon: Code, color: "#478CBF" },
 
-    { name: "HTML", icon: Globe, color: "#E44D26", group: "Web" },
-    { name: "CSS", icon: Globe, color: "#1572B6", group: "Web" },
-    { name: "JavaScript", icon: Code, color: "#F7A11E", group: "Web" },
-    { name: "Vue", icon: Code, color: "#42B883", group: "Web" },
-    { name: "React", icon: Code, color: "#61DAFB", group: "Web" },
-    { name: "Svelte", icon: Code, color: "#FF3E00", group: "Web" },
-    { name: "PHP", icon: Code, color: "#777BB4", group: "Web" },
-    { name: "Laravel", icon: Code, color: "#FF2D20", group: "Web" },
+    { name: "HTML", icon: Globe, color: "#E44D26" },
+    { name: "CSS", icon: Globe, color: "#1572B6" },
+    { name: "JavaScript", icon: Code, color: "#F7A11E" },
+    { name: "Vue", icon: Code, color: "#42B883" },
+    { name: "React", icon: Code, color: "#61DAFB" },
+    { name: "Svelte", icon: Code, color: "#FF3E00" },
+    { name: "PHP", icon: Code, color: "#777BB4" },
+    { name: "Laravel", icon: Code, color: "#FF2D20" },
 
-    { name: "OpenCV", icon: Cpu, color: "#5C3EE8", group: "Computer Vision & AI" },
-    { name: "YOLO", icon: Cpu, color: "#FFB400", group: "Computer Vision & AI" },
-    { name: "TensorFlow", icon: Cpu, color: "#FF6F00", group: "Computer Vision & AI" },
-    { name: "PyTorch", icon: Cpu, color: "#EE4C2C", group: "Computer Vision & AI" },
+    { name: "OpenCV", icon: Cpu, color: "#5C3EE8" },
+    { name: "YOLO", icon: Cpu, color: "#FFB400" },
+    { name: "TensorFlow", icon: Cpu, color: "#FF6F00" },
+    { name: "PyTorch", icon: Cpu, color: "#EE4C2C" },
 
-    { name: "Pandas", icon: Database, color: "#150458", group: "Data & ML" },
-    { name: "NumPy", icon: Database, color: "#013243", group: "Data & ML" },
-    { name: "Scikit-learn", icon: Database, color: "#F7931E", group: "Data & ML" },
-    { name: "Feature Engineering", icon: Database, color: "#6C3483", group: "Data & ML" },
+    { name: "Pandas", icon: Database, color: "#150458" },
+    { name: "NumPy", icon: Database, color: "#013243" },
+    { name: "Scikit-learn", icon: Database, color: "#F7931E" },
+    { name: "Feature Engineering", icon: Database, color: "#6C3483" },
 
-    { name: "Git", icon: GitBranch, color: "#F05032", group: "Systems & Tools" },
-    { name: "Docker", icon: Dock, color: "#2496ED", group: "Systems & Tools" },
-    { name: "Linux/WSL2", icon: Terminal, color: "#000000", group: "Systems & Tools" },
-    { name: "Jupyter", icon: Terminal, color: "#F37626", group: "Systems & Tools" },
-    { name: "Arduino", icon: Cpu, color: "#00979D", group: "Systems & Tools" },
-    { name: "Raspberry Pi", icon: Cpu, color: "#C51A4A", group: "Systems & Tools" },
+    { name: "Git", icon: GitBranch, color: "#F05032" },
+    { name: "Docker", icon: Dock, color: "#2496ED" },
+    { name: "Linux/WSL2", icon: Terminal, color: "#000000" },
+    { name: "Jupyter", icon: Terminal, color: "#F37626" },
+    { name: "Arduino", icon: Cpu, color: "#00979D" },
+    { name: "Raspberry Pi", icon: Cpu, color: "#C51A4A" },
 
-    { name: "Portuguese (Native)", icon: Globe, color: "#3E4095", group: "Languages" },
-    { name: "English (C2)", icon: Globe, color: "#1C75BC", group: "Languages" }
+    { name: "Portuguese (Native)", icon: Globe, color: "#3E4095" },
+    { name: "English (C2)", icon: Globe, color: "#1C75BC" }
   ];
 
   const education = {
@@ -96,9 +102,9 @@
   };
 </script>
 
-<!-- 🧑 Perfil -->
+<!-- 🧑 Profile -->
 <section class="hero">
-  <img src="https://fastly.picsum.photos/id/293/180/180.jpg?hmac=MtKAFcKC8_ogntpFC432N0cfBSklw6wi4wB7I4xNZTo" alt="Foto de perfil" class="avatar" />
+  <img src="https://fastly.picsum.photos/id/293/180/180.jpg?hmac=MtKAFcKC8_ogntpFC432N0cfBSklw6wi4wB7I4xNZTo" alt="Profile of Ivo Ferreira" class="avatar" />
   <h1>{profile.name}</h1>
   <h2>{profile.title}</h2>
   <div class="info">
@@ -125,15 +131,19 @@
         <div class="image-wrapper"><img src={project.img} alt={project.title} /></div>
         <h3>{project.title}</h3>
         <p>{project.description}</p>
+        <div class="tags">{#each project.tags as tag}<span class="tag">{tag}</span>{/each}</div>
       </a>
     {/each}
   </div>
+
+  <!-- Other Projects -->
   <div class="other-grid">
     {#each otherProjects as project}
       <a href={project.link} class="card" target="_blank">
         <div class="image-wrapper"><img src={project.img} alt={project.title} /></div>
         <h3>{project.title}</h3>
         <p>{project.description}</p>
+        <div class="tags">{#each project.tags as tag}<span class="tag">{tag}</span>{/each}</div>
       </a>
     {/each}
   </div>
@@ -159,8 +169,9 @@
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-  * { font-family: 'Poppins', sans-serif; }
+  * { font-family: 'Poppins', sans-serif; margin:0; padding:0; box-sizing:border-box; }
 
+  /* Profile */
   .hero { padding: 4rem 2rem 3rem; text-align: center; background: #f9f9f9; }
   .avatar { border-radius: 50%; margin-bottom: 1rem; }
   .hero h1 { font-size: 2.5rem; margin: 0.2rem 0; color: #222; }
@@ -170,27 +181,37 @@
   .info a { text-decoration: none; color: #4f46e5; }
   .info a:hover { text-decoration: underline; }
 
+  /* About */
   .about { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; text-align: center; }
   .about h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #4f46e5; }
   .about p { font-size: 1rem; line-height: 1.6; color: #444; }
 
+  /* Projects */
   .projects { padding: 4rem 2rem; text-align: center; }
   .projects h2 { font-size: 2.5rem; margin-bottom: 2rem; color: #4f46e5; }
   .featured-grid { display: flex; gap: 2rem; justify-content: center; margin-bottom: 3rem; }
   .featured-card { width: 45%; text-decoration: none; color: inherit; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease; }
   @media (hover: hover) { .featured-card:hover { transform: translateY(-5px); } .featured-card:hover img { transform: scale(1.05); filter: grayscale(0); } }
+
   .other-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
   .card { text-decoration: none; color: inherit; overflow: hidden; border-radius: 12px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
   @media (hover: hover) { .card:hover { transform: translateY(-5px); } .card:hover img { transform: scale(1.05); filter: grayscale(0); } }
-  .image-wrapper img { width: 100%; display: block; height: auto; transition: transform 0.6s ease, filter 0.6s ease; filter: grayscale(100%); }
-  h3 { margin: 1rem 0 0.5rem; font-size: 1.5rem; }
-  p { font-size: 0.95rem; color: #555; padding: 0 1rem 1.5rem; }
 
+  .image-wrapper img { width: 100%; display: block; height: auto; transition: transform 0.6s ease, filter 0.6s ease; filter: grayscale(100%); }
+
+  h3 { margin: 1rem 0 0.5rem; font-size: 1.5rem; }
+  p { font-size: 0.95rem; color: #555; padding: 0 1rem 1rem; }
+
+  .tags { padding: 0 1rem 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tag { font-size: 0.8rem; background: #e0e0e0; padding: 0.2rem 0.5rem; border-radius: 6px; }
+
+  /* Tech Stack */
   .stack { padding: 4rem 2rem; text-align: center; max-width: 1000px; margin: 0 auto; }
   .stack h2 { font-size: 2.2rem; margin-bottom: 2rem; font-weight: 600; }
   .tech-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
   .tech-card { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 12px; font-size: 0.9rem; font-weight: 500; transition: transform 0.2s ease, box-shadow 0.2s ease; }
   @media (hover: hover) { .tech-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); } }
 
+  /* Education */
   .education { text-align: center; font-size: 0.95rem; color: #555; margin: 2rem 0; }
 </style>
