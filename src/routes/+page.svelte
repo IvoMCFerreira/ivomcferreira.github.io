@@ -1,5 +1,35 @@
 <script>
   import { MapPin, Phone, Mail, Github, Linkedin, Code, Cpu, Database, Terminal, Globe, GitBranch, Dock } from "lucide-svelte";
+  import { onMount } from 'svelte';
+
+  let isMobile = false;
+  let playingGifs = new Set();
+
+  onMount(() => {
+    const checkMobile = () => {
+      isMobile = window.innerWidth <= 768;
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  });
+
+  function toggleGif(projectTitle, event) {
+    if (!isMobile) return;
+    
+    event.preventDefault();
+    const isPlaying = playingGifs.has(projectTitle);
+    
+    if (isPlaying) {
+      playingGifs.delete(projectTitle);
+    } else {
+      playingGifs.add(projectTitle);
+    }
+    
+    playingGifs = playingGifs; // trigger reactivity
+  }
 
   const profile = {
     name: "Ivo Ferreira",
@@ -138,14 +168,25 @@
   <h2>Featured Projects</h2>
   <div class="featured-grid">
     {#each featuredProjects as project}
-      <div class="featured-card">
-        <div class="image-wrapper">
-          <img class="static" src={project.staticImg} alt={project.title} />
-          <img class="gif" src={project.gifImg} alt={project.title} />
+      <div class="featured-card" class:mobile-card={isMobile}>
+        <div class="image-wrapper" on:click={(e) => toggleGif(project.title, e)} class:clickable={isMobile}>
+          <img class="static" src={project.staticImg} alt={project.title} class:playing={playingGifs.has(project.title)} />
+          <img class="gif" src={project.gifImg} alt={project.title} class:playing={playingGifs.has(project.title)} />
+          {#if isMobile}
+            <div class="play-overlay" class:playing={playingGifs.has(project.title)}>
+              <span class="play-text">Tap to play</span>
+            </div>
+            <div class="description-overlay" class:playing={playingGifs.has(project.title)}>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </div>
+          {/if}
         </div>
-        <h3>{project.title}</h3>
-        <p>{project.description}</p>
-        <div class="tags">{#each project.tags as tag}<span class="tag">{tag}</span>{/each}</div>
+        <div class="project-content" class:hidden-mobile={isMobile}>
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
+          <div class="tags">{#each project.tags as tag}<span class="tag">{tag}</span>{/each}</div>
+        </div>
       </div>
     {/each}
   </div>
@@ -153,11 +194,13 @@
   <!-- Other Projects -->
   <div class="other-grid">
     {#each otherProjects as project}
-      <div class="card">
+      <div class="card" class:mobile-card={isMobile}>
         <div class="image-wrapper"><img src={project.img} alt={project.title} /></div>
-        <h3>{project.title}</h3>
-        <p>{project.description}</p>
-        <div class="tags">{#each project.tags as tag}<span class="tag">{tag}</span>{/each}</div>
+        <div class="project-content" class:hidden-mobile={isMobile}>
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
+          <div class="tags">{#each project.tags as tag}<span class="tag">{tag}</span>{/each}</div>
+        </div>
       </div>
     {/each}
   </div>
@@ -221,4 +264,132 @@
 
   /* Education */
   .education { text-align: center; font-size: 0.95rem; color: #555; margin: 2rem 0; }
+
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .featured-grid {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .featured-card.mobile-card {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    
+    .other-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    
+    .card.mobile-card {
+      min-height: auto;
+    }
+    
+    .project-content.hidden-mobile {
+      display: none;
+    }
+    
+    .image-wrapper.clickable {
+      cursor: pointer;
+      position: relative;
+    }
+    
+    .play-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+    }
+    
+    .play-overlay.playing {
+      opacity: 0;
+    }
+    
+    .description-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+      color: white;
+      padding: 1rem;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+    
+    .description-overlay.playing {
+      opacity: 0;
+    }
+    
+    .description-overlay h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      opacity: 1;
+    }
+    
+    .description-overlay p {
+      margin: 0;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      opacity: 1;
+      color: white;
+    }
+    
+    .image-wrapper .gif.playing {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    
+    .image-wrapper .static.playing {
+      opacity: 0 !important;
+    }
+    
+    /* Adjust hero section for mobile */
+    .hero {
+      padding: 1.5rem 1rem 2rem;
+    }
+    
+    .hero h1 {
+      font-size: 2rem;
+    }
+    
+    .info {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    
+    /* Stack section mobile */
+    .stack {
+      padding: 2rem 1rem;
+    }
+    
+    .tech-grid {
+      gap: 0.6rem;
+    }
+    
+    .tech-card {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+    }
+    
+    /* Projects section mobile */
+    .projects {
+      padding: 2rem 1rem;
+    }
+    
+    .projects h2 {
+      font-size: 2rem;
+    }
+  }
 </style>
