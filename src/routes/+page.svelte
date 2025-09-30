@@ -179,7 +179,7 @@
   * { font-family: 'Poppins', sans-serif; margin:0; padding:0; box-sizing:border-box; }
 
   /* Profile */
-  .hero { padding: 4rem 2rem 3rem; text-align: center; background: #f9f9f9; }
+  .hero { padding: 2.5rem 2rem 3rem; text-align: center; }
   .avatar { border-radius: 50%; margin-bottom: 1rem; }
   .hero h1 { font-size: 2.5rem; margin: 0.2rem 0; color: #222; }
   .hero h2 { font-size: 1.2rem; color: #555; margin-bottom: 1.5rem; }
@@ -189,12 +189,12 @@
   .info a:hover { text-decoration: underline; }
 
   /* About */
-  .about { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; text-align: center; }
+  .about { padding: 2.5rem 2rem; max-width: 800px; margin: 0 auto; text-align: center; }
   .about h2 { font-size: 2rem; margin-bottom: 1.5rem; }
   .about p { font-size: 1rem; line-height: 1.6; color: #444; }
 
   /* Projects */
-  .projects { padding: 4rem 2rem; text-align: center; }
+  .projects { padding: 2.5rem 2rem; text-align: center; }
   .projects h2 { font-size: 2.5rem; margin-bottom: 2rem; }
   .featured-grid { display: flex; gap: 2rem; justify-content: center; margin-bottom: 3rem; }
   .featured-card { width: 45%; text-decoration: none; color: inherit; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease; position: relative; }
@@ -219,7 +219,7 @@
   .tag { font-size: 0.8rem; background: #e0e0e0; padding: 0.2rem 0.5rem; border-radius: 6px; }
 
   /* Tech Stack */
-  .stack { padding: 4rem 2rem; text-align: center; max-width: 1000px; margin: 0 auto; }
+  .stack { padding: 2.5rem 2rem; text-align: center; max-width: 1000px; margin: 0 auto; }
   .stack h2 { font-size: 2.2rem; margin-bottom: 2rem; font-weight: 600; }
   .tech-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
   .tech-card { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 12px; font-size: 0.9rem; font-weight: 500; transition: transform 0.2s ease, box-shadow 0.2s ease; }
