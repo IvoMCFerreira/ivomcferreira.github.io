@@ -137,8 +137,8 @@
   <h2>{profile.title}</h2>
   <div class="info">
     <p><MapPin size="18" /> {profile.location}</p>
-    <p><Phone size="18" /> {profile.phone}</p>
     <p><Mail size="18" /> {profile.email}</p>
+    <p><Phone size="18" /> {profile.phone}</p>
     <p><Github size="18" /> <a href={profile.github} target="_blank">GitHub</a></p>
     <p><Linkedin size="18" /> <a href={profile.linkedin} target="_blank">LinkedIn</a></p>
   </div>
