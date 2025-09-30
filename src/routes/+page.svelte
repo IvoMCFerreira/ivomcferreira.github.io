@@ -193,7 +193,7 @@
   .about h2 { font-size: 2rem; margin-bottom: 1.5rem; }
   .about p { font-size: 1rem; line-height: 1.6; color: #444; }
 
-  /* Projects */
+  /* Projects  */
   .projects { padding: 2.5rem 2rem; text-align: center; }
   .projects h2 { font-size: 2.5rem; margin-bottom: 2rem; }
   .featured-grid { display: flex; gap: 2rem; justify-content: center; margin-bottom: 3rem; }
