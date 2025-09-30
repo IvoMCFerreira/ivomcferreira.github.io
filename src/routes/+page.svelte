@@ -16,7 +16,6 @@
       title: "2D Educational RPG",
       staticImg: "/images/game.png",
       gifImg: "/images/game-demo.gif",
-      link: "#",
       description: "Full-stack development of a 2D educational RPG, including gameplay, art, and sound using Python and GDScript.",
       tags: ["Python", "GDScript", "GameDev"]
     },
@@ -24,7 +23,6 @@
       title: "Real-Time Computer Vision Middleware",
       staticImg: "/images/yolo.png",
       gifImg: "/images/yolo-demo.gif",
-      link: "#",
       description: "Middleware communicating with a remote server for real-time object detection using Python, OpenCV, YOLO, and optimized processing pipelines.",
       tags: ["Python", "OpenCV", "YOLO", "AI"]
     }
@@ -34,28 +32,24 @@
     {
       title: "Rental Price Predictor",
       img: "/images/rent.png",
-      link: "#",
       description: "Regression model predicting apartment prices using Python, Pandas, Scikit-learn, and feature engineering for data cleaning and transformation.",
       tags: ["Python", "Pandas", "Scikit-learn", "ML"]
     },
     {
       title: "Virtual Payment Card Simulator",
       img: "/images/card.png",
-      link: "#",
       description: "Interactive virtual card for peer-to-peer payments using Vue.js and Laravel, simulating secure mobile money transfers.",
       tags: ["Vue", "Laravel", "Web"]
     },
     {
       title: "Smart Supermarket Dashboard",
       img: "/images/dashboard.png",
-      link: "#",
       description: "IoT dashboard monitoring and controlling sensors and actuators connected to Raspberry Pi and Arduino, using Python, HTML, CSS, and JS.",
       tags: ["Python", "IoT", "Raspberry Pi", "Arduino"]
     },
     {
       title: "AI Custom Object Classifier",
       img: "/images/neural.png",
-      link: "#",
       description: "Trained a high-accuracy object detection model using Python, Jupyter, and Linux, with advanced feature extraction and fine-tuning on custom datasets.",
       tags: ["Python", "AI", "Computer Vision", "Feature Extraction"]
     }
