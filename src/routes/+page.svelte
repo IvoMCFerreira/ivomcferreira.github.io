@@ -14,14 +14,16 @@
   let featuredProjects = [
     {
       title: "2D Educational RPG",
-      img: "/images/game.png",
+      staticImg: "/images/game.png",
+      gifImg: "/images/game-demo.gif",
       link: "#",
       description: "Full-stack development of a 2D educational RPG, including gameplay, art, and sound using Python and GDScript.",
       tags: ["Python", "GDScript", "GameDev"]
     },
     {
       title: "Real-Time Computer Vision Middleware",
-      img: "/images/yolo.png",
+      staticImg: "/images/yolo.png",
+      gifImg: "/images/yolo-demo.gif",
       link: "#",
       description: "Middleware communicating with a remote server for real-time object detection using Python, OpenCV, YOLO, and optimized processing pipelines.",
       tags: ["Python", "OpenCV", "YOLO", "AI"]
@@ -38,7 +40,7 @@
     },
     {
       title: "Virtual Payment Card Simulator",
-      img: "/images/card.jpg",
+      img: "/images/card.png",
       link: "#",
       description: "Interactive virtual card for peer-to-peer payments using Vue.js and Laravel, simulating secure mobile money transfers.",
       tags: ["Vue", "Laravel", "Web"]
@@ -128,7 +130,10 @@
   <div class="featured-grid">
     {#each featuredProjects as project}
       <a href={project.link} class="featured-card" target="_blank">
-        <div class="image-wrapper"><img src={project.img} alt={project.title} /></div>
+        <div class="image-wrapper">
+          <img class="static" src={project.staticImg} alt={project.title} />
+          <img class="gif" src={project.gifImg} alt={project.title} />
+        </div>
         <h3>{project.title}</h3>
         <p>{project.description}</p>
         <div class="tags">{#each project.tags as tag}<span class="tag">{tag}</span>{/each}</div>
@@ -190,14 +195,20 @@
   .projects { padding: 4rem 2rem; text-align: center; }
   .projects h2 { font-size: 2.5rem; margin-bottom: 2rem; color: #4f46e5; }
   .featured-grid { display: flex; gap: 2rem; justify-content: center; margin-bottom: 3rem; }
-  .featured-card { width: 45%; text-decoration: none; color: inherit; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease; }
-  @media (hover: hover) { .featured-card:hover { transform: translateY(-5px); } .featured-card:hover img { transform: scale(1.05); filter: grayscale(0); } }
+  .featured-card { width: 45%; text-decoration: none; color: inherit; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease; position: relative; }
+  @media (hover: hover) { .featured-card:hover { transform: translateY(-5px); } }
+
+  .image-wrapper { position: relative; width: 100%; height: auto; overflow: hidden; }
+  .image-wrapper img { width: 100%; display: block; height: auto; transition: opacity 0.4s ease, transform 0.6s ease; }
+  .image-wrapper .gif { position: absolute; top: 0; left: 0; opacity: 0; }
+  @media (hover: hover) {
+    .featured-card:hover .image-wrapper .gif { opacity: 1; transform: scale(1.05); }
+    .featured-card:hover .image-wrapper .static { opacity: 0; }
+  }
 
   .other-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
   .card { text-decoration: none; color: inherit; overflow: hidden; border-radius: 12px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-  @media (hover: hover) { .card:hover { transform: translateY(-5px); } .card:hover img { transform: scale(1.05); filter: grayscale(0); } }
-
-  .image-wrapper img { width: 100%; display: block; height: auto; transition: transform 0.6s ease, filter 0.6s ease; filter: grayscale(100%); }
+  @media (hover: hover) { .card:hover { transform: translateY(-5px); } .card:hover img { transform: scale(1.05); } }
 
   h3 { margin: 1rem 0 0.5rem; font-size: 1.5rem; }
   p { font-size: 0.95rem; color: #555; padding: 0 1rem 1rem; }
