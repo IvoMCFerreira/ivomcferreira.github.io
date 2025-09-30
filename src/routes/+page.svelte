@@ -13,7 +13,7 @@
 
   let featuredProjects = [
     {
-      title: "2D RPG Educacional",
+      title: "2D Educational Game",
       img: "https://fastly.picsum.photos/id/45/600/400.jpg?hmac=30ESDoOeuVNmsmMrYIspOUJ2OjOmFoXTvzRiH7wWHfI",
       link: "#",
       description: "Jogo educativo desenvolvido em GDScript/Python."
@@ -29,25 +29,25 @@
   let otherProjects = [
     {
       title: "Rental Price Prediction",
-      img: "https://fastly.picsum.photos/id/1018/600/400.jpg?hmac=abcd1234",
+      img: "https://fastly.picsum.photos/id/45/600/400.jpg?hmac=30ESDoOeuVNmsmMrYIspOUJ2OjOmFoXTvzRiH7wWHfI",
       link: "#",
       description: "Modelo de regressão para preços de apartamentos com Python, Pandas e Scikit-learn."
     },
     {
       title: "Simulador de Cartão Virtual",
-      img: "https://fastly.picsum.photos/id/1025/600/400.jpg?hmac=abcd5678",
+      img: "https://fastly.picsum.photos/id/45/600/400.jpg?hmac=30ESDoOeuVNmsmMrYIspOUJ2OjOmFoXTvzRiH7wWHfI",
       link: "#",
       description: "Simulador de cartão tipo MBWay com interface web e lógica de transações."
     },
     {
       title: "Dashboard Supermercado Inteligente",
-      img: "https://fastly.picsum.photos/id/1020/600/400.jpg?hmac=abcd9012",
+      img: "https://fastly.picsum.photos/id/45/600/400.jpg?hmac=30ESDoOeuVNmsmMrYIspOUJ2OjOmFoXTvzRiH7wWHfI",
       link: "#",
       description: "Gestão de sensores, stock e performance do supermercado."
     },
     {
       title: "Treino Modelo IA de Object Detection",
-      img: "https://fastly.picsum.photos/id/1022/600/400.jpg?hmac=abcd3456",
+      img: "https://fastly.picsum.photos/id/45/600/400.jpg?hmac=30ESDoOeuVNmsmMrYIspOUJ2OjOmFoXTvzRiH7wWHfI",
       link: "#",
       description: "Modelo IA para distinguir objetos em fotos com feature extraction e fine-tuning."
     }
@@ -92,7 +92,7 @@
 
   const education = {
     uni: "Polytechnic Institute of Leiria",
-    degree: "Licenciatura em Engenharia Informática"
+    degree: "Bachelor’s in Computer Engineering"
   };
 </script>
 
@@ -113,12 +113,12 @@
 <!-- ℹ️ About Me -->
 <section class="about">
   <h2>About Me</h2>
-  <p>Sou um entusiasta por tecnologia e engenharia informática, com experiência em desenvolvimento web, jogos e visão por computador. Tenho interesse em criar soluções criativas e aprender novas tecnologias enquanto colaboro em projetos desafiantes.</p>
+  <p>Computer Engineer specializing in Python, AI/ML, game development, and computer vision. Experienced in building real-time solutions with OpenCV, YOLO, and machine learning, bridging software, middleware, and interactive applications.</p>
 </section>
 
 <!-- 💻 Featured Projects -->
 <section class="projects">
-  <h2>Projetos</h2>
+  <h2>Featured Projects</h2>
   <div class="featured-grid">
     {#each featuredProjects as project}
       <a href={project.link} class="featured-card" target="_blank">
