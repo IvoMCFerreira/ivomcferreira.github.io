@@ -124,6 +124,19 @@
   <p>Computer Engineer specializing in Python, AI/ML, game development, and computer vision. Experienced in building real-time solutions with OpenCV, YOLO, and machine learning, bridging software, middleware, and interactive applications.</p>
 </section>
 
+<!-- 🛠️ Tech Stack -->
+<section class="stack">
+  <h2>Tech Stack</h2>
+  <div class="tech-grid">
+    {#each techStack as tech}
+      <div class="tech-card" style="background-color: {tech.color}33; color: {tech.color}">
+        <tech.icon size="18" />
+        <span>{tech.name}</span>
+      </div>
+    {/each}
+  </div>
+</section>
+
 <!-- 💻 Featured Projects -->
 <section class="projects">
   <h2>Featured Projects</h2>
@@ -154,18 +167,7 @@
   </div>
 </section>
 
-<!-- 🛠️ Tech Stack -->
-<section class="stack">
-  <h2>Tech Stack</h2>
-  <div class="tech-grid">
-    {#each techStack as tech}
-      <div class="tech-card" style="background-color: {tech.color}33; color: {tech.color}">
-        <tech.icon size="18" />
-        <span>{tech.name}</span>
-      </div>
-    {/each}
-  </div>
-</section>
+
 
 <!-- 🎓 Education -->
 <section class="education">
@@ -188,12 +190,12 @@
 
   /* About */
   .about { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; text-align: center; }
-  .about h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #4f46e5; }
+  .about h2 { font-size: 2rem; margin-bottom: 1.5rem; }
   .about p { font-size: 1rem; line-height: 1.6; color: #444; }
 
   /* Projects */
   .projects { padding: 4rem 2rem; text-align: center; }
-  .projects h2 { font-size: 2.5rem; margin-bottom: 2rem; color: #4f46e5; }
+  .projects h2 { font-size: 2.5rem; margin-bottom: 2rem; }
   .featured-grid { display: flex; gap: 2rem; justify-content: center; margin-bottom: 3rem; }
   .featured-card { width: 45%; text-decoration: none; color: inherit; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease; position: relative; }
   @media (hover: hover) { .featured-card:hover { transform: translateY(-5px); } }
