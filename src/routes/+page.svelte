@@ -160,7 +160,7 @@
 
 <!-- 🧑 Profile -->
 <section class="hero">
-  <img src="https://fastly.picsum.photos/id/293/180/180.jpg?hmac=MtKAFcKC8_ogntpFC432N0cfBSklw6wi4wB7I4xNZTo" alt="Profile of Ivo Ferreira" class="avatar" />
+  <img src="/images/profilepic.png" alt="Profile of Ivo Ferreira" class="avatar" />
   <h1>{profile.name}</h1>
   <h2>{profile.title}</h2>
   <!-- ℹ️ About Me -->
