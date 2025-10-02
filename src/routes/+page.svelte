@@ -267,7 +267,7 @@
 
   /* Profile */
   .hero { padding: 1.5rem 2rem 3rem; text-align: center; }
-  .avatar { border-radius: 50%; margin-bottom: 1rem; margin-top: 1rem; }
+  .avatar { border-radius: 50%; margin-bottom: 1rem; margin-top: 1rem; width: 180px; height: 180px; object-fit: cover; }
   .hero h1 { font-size: 2.5rem; margin: 0.2rem 0; color: #222; }
   .hero h2 { font-size: 1.2rem; color: #555; margin-bottom: 1.5rem; }
   .info { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; font-size: 0.95rem; margin-top: 1rem; }
