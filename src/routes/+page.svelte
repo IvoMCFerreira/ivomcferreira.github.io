@@ -69,21 +69,23 @@
         { name: "YOLO", icon: Cpu, color: "#FFB400" },
         { name: "AI", icon: Cpu, color: "#FF6F00" }
       ]
+    },
+
+    {
+      title: "Game Server Architecture (Metin2 Private Server)",
+      staticImg: "/images/metin2.png",
+      gifImg: "/images/metin2-demo.gif",
+      description: "Developing a private game server with backend logic in C++ and database management, implementing network optimizations and concurrency for stable player experience.",
+      tags: [
+        { name: "C++", icon: Code, color: "#00599C" },
+        { name: "Database", icon: Database, color: "#F29111" },
+        { name: "Networking", icon: Globe, color: "#E44D26" },
+        { name: "Concurrency", icon: Cpu, color: "#FF6F00" }
+      ]
     }
   ];
 
   let otherProjects = [
-    {
-      title: "Rental Price Predictor",
-      img: "/images/rent.png",
-      description: "Regression model predicting apartment prices using Python, Pandas, Scikit-learn, and feature engineering for data cleaning and transformation.",
-      tags: [
-        { name: "Python", icon: Code, color: "#3572A5" },
-        { name: "Pandas", icon: Database, color: "#150458" },
-        { name: "Scikit-learn", icon: Database, color: "#F7931E" },
-        { name: "ML", icon: Cpu, color: "#FF6F00" }
-      ]
-    },
     {
       title: "Virtual Payment Card Simulator",
       img: "/images/card.png",
