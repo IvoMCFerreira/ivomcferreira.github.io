@@ -75,7 +75,7 @@
       title: "Game Server Architecture (Metin2 Private Server)",
       staticImg: "/images/metin2.png",
       gifImg: "/images/metin2-demo.gif",
-      description: "Developing a private game server with backend logic in C++ and database management, implementing network optimizations and concurrency for stable player experience.",
+      description: "Development of a private game server with backend logic in C++ and database management, implementing network optimizations and concurrency for stable player experience.",
       tags: [
         { name: "C++", icon: Code, color: "#00599C" },
         { name: "Database", icon: Database, color: "#F29111" },
